@@ -19,16 +19,16 @@
   <body>
     <div>
       <div>
-        <div class="row">
-          <div class="col-md-10 back full">
+          <div class="back full">
             <div class="container">
-              <div style="height: 100vh; overflow: scroll;" class="row">
+              <div style="height: 100vh; overflow: hidden;" class="row">
 
                 <!-- Step 1 -->
 
 
                 <div id="slide1" class="col-md-12 contain p-5">
-                  <label class="lab" for="email"
+                  <div class="fade-in">
+                  <label class="lab" for="first_Name"
                     ><span class="sn"
                       >1 <i class="fas fa-arrow-right"></i
                     ></span>
@@ -41,12 +41,14 @@
                     placeholder="Type your first name here"
                     id="first_Name"
                   />
+                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
                   <div class="left">
-                    <button onclick="next(2)" class="customBtn">
+                    <button onclick="next(2,this)" class="customBtn">
                       Next <i class="fas fa-arrow-right"></i>
                     </button>
-                    press Enter
+                   
                   </div>
+                </div>
                 </div>
 
 
@@ -54,25 +56,31 @@
                 
                 
                 <div id="slide2" class="col-md-12 contain p-5">
+                  <div class="fade-in">
                   <p class="lab">
+                    <span class="sn"
+                    >2 <i class="fas fa-arrow-right"></i
+                  ></span>
                     Hi <span id="firstName1">[first name]</span>, this will just take a moment. I just have a
                     few questions that’ll help me better understand which
                     opportunities you’d like to hear about.
                   </p>
                   <p class="lab">Sound good?</p>
-                  <button onclick="next(3)" class="customBtn">
+                  <div class="left">
+                  <button onclick="next(3,this)" class="customBtn">
                     Sounds great to me
                   </button>
                 </div>
-
+                </div>
+              </div>
 
                 <!-- Step 3 -->
 
 
                 <div id="slide3" class="col-md-12 contain p-5">
-                  <label class="lab" for="email"
+                  <label class="lab" for="last_Name"
                     > <span class="sn"
-                    >2 <i class="fas fa-arrow-right"></i
+                    >3 <i class="fas fa-arrow-right"></i
                   ></span> Okay <span id="firstName2">[first name]</span>, what’s your last name?
                   </label>
                   <input
@@ -80,9 +88,12 @@
                     type="text"
                     name=""
                     placeholder="Type your first name here"
-                    id="email"
+                    id="last_Name"
                   />
-                  <button onclick="next(4)" class="customBtn">Next</button>
+                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <div  class="left">
+                  <button onclick="next(4,this)" class="customBtn">Next</button>
+                </div>
                 </div>
 
 
@@ -94,40 +105,40 @@
                   <p class="lab"><span class="sn">4 <i class="fas fa-arrow-right"></i></span> Got it! What’s your current title? (Choose One)</p>
                   <p></p>
                   <div class="container-fluid">
-                  <div class="row">
+                  <div style="height: 40vh;overflow: scroll;overflow-x: hidden;" class=" row">
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Associate</button>
+                      <button onclick="next(5,this)" class="select">Associate</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Attorney</button>
+                      <button onclick="next(5,this)" class="select">Attorney</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">
+                      <button onclick="next(5,this)" class="select">
                         Senior Attorney
                       </button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Partner</button>
+                      <button onclick="next(5,this)" class="select">Partner</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">
+                      <button onclick="next(5,this)" class="select">
                         Managing Partner
                       </button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Shareholder</button>
+                      <button onclick="next(5,this)" class="select">Shareholder</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Of Council</button>
+                      <button onclick="next(5,this)" class="select">Of Council</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Paralegal</button>
+                      <button onclick="next(5,this)" class="select">Paralegal</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Legal Assistant</button>
+                      <button onclick="next(5,this)" class="select">Legal Assistant</button>
                     </div>
                     <div class="col-md-3 py-2">
-                      <button onclick="next(5)" class="select">Other</button>
+                      <button onclick="next(5,this)" class="select">Other</button>
                     </div>
                     
                   </div>
@@ -143,156 +154,156 @@
                 <div id="slide5" class="col-md-12 contain p-5">
                   <p class="lab"><span class="sn">5 <i class="fas fa-arrow-right"></i></span> What’s your main practice area (choose just one)</p>
                   <div class="container-fluid">
-                    <div class="row">
+                    <div style="height: 40vh;overflow: scroll;overflow-x: hidden;" class="row">
                       <div class="col-md-3 py-1">
-                        <button class="select">Appellate</button>
+                        <button onclick="next(6,this)" class="select">Appellate</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Alcohol Beverage Law</button>
+                        <button onclick="next(6,this)" class="select">Alcohol Beverage Law</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Antitrust and Competition</button>
+                        <button onclick="next(6,this)" class="select">Antitrust and Competition</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Aviation</button>
+                        <button onclick="next(6,this)" class="select">Aviation</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Banking</button>
+                        <button onclick="next(6,this)" class="select">Banking</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Bankruptcy</button>
+                        <button onclick="next(6,this)" class="select">Bankruptcy</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Biotech</button>
+                        <button onclick="next(6,this)" class="select">Biotech</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Civil</button>
+                        <button onclick="next(6,this)" class="select">Civil</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Condominium</button>
+                        <button onclick="next(6,this)" class="select">Condominium</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Construction </button>
+                        <button onclick="next(6,this)" class="select">Construction </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Commercial Litigation </button>
+                        <button onclick="next(6,this)" class="select">Commercial Litigation </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Corporate </button>
+                        <button onclick="next(6,this)" class="select">Corporate </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Criminal </button>
+                        <button onclick="next(6,this)" class="select">Criminal </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Data Privacy </button>
+                        <button onclick="next(6,this)" class="select">Data Privacy </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Education </button>
+                        <button onclick="next(6,this)" class="select">Education </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Electric Power </button>
+                        <button onclick="next(6,this)" class="select">Electric Power </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Energy and Oil & Gas </button>
+                        <button onclick="next(6,this)" class="select">Energy and Oil & Gas </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Entertainment </button>
+                        <button onclick="next(6,this)" class="select">Entertainment </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Environment & Land </button>
+                        <button onclick="next(6,this)" class="select">Environment & Land </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Estate Planning </button>
+                        <button onclick="next(6,this)" class="select">Estate Planning </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Family Law </button>
+                        <button onclick="next(6,this)" class="select">Family Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Finance </button>
+                        <button onclick="next(6,this)" class="select">Finance </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Food & Drug </button>
+                        <button onclick="next(6,this)" class="select">Food & Drug </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">General Liability </button>
+                        <button onclick="next(6,this)" class="select">General Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Government </button>
+                        <button onclick="next(6,this)" class="select">Government </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Health Care </button>
+                        <button onclick="next(6,this)" class="select">Health Care </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Immigration </button>
+                        <button onclick="next(6,this)" class="select">Immigration </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Insurance Coverage </button>
+                        <button onclick="next(6,this)" class="select">Insurance Coverage </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Insurance Defense </button>
+                        <button onclick="next(6,this)" class="select">Insurance Defense </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Intellectual Property </button>
+                        <button onclick="next(6,this)" class="select">Intellectual Property </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">International Trade </button>
+                        <button onclick="next(6,this)" class="select">International Trade </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Labor & Employment </button>
+                        <button onclick="next(6,this)" class="select">Labor & Employment </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Maritime & Trans </button>
+                        <button onclick="next(6,this)" class="select">Maritime & Trans </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Medical Malpractice </button>
+                        <button onclick="next(6,this)" class="select">Medical Malpractice </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Mergers & Acquisitions </button>
+                        <button onclick="next(6,this)" class="select">Mergers & Acquisitions </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Municipal Law </button>
+                        <button onclick="next(6,this)" class="select">Municipal Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Other </button>
+                        <button onclick="next(6,this)" class="select">Other </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Patent Law </button>
+                        <button onclick="next(6,this)" class="select">Patent Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Personal Injury </button>
+                        <button onclick="next(6,this)" class="select">Personal Injury </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Personal Injury Protection </button>
+                        <button onclick="next(6,this)" class="select">Personal Injury Protection </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Probate & Trust </button>
+                        <button onclick="next(6,this)" class="select">Probate & Trust </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Product Liability </button>
+                        <button onclick="next(6,this)" class="select">Product Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Professional Liability </button>
+                        <button onclick="next(6,this)" class="select">Professional Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Real Estate </button>
+                        <button onclick="next(6,this)" class="select">Real Estate </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Tax </button>
+                        <button onclick="next(6,this)" class="select">Tax </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Technology Transactions </button>
+                        <button onclick="next(6,this)" class="select">Technology Transactions </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Telecommunications </button>
+                        <button onclick="next(6,this)" class="select">Telecommunications </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Trial </button>
+                        <button onclick="next(6,this)" class="select">Trial </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Trusts & Estates</button>
+                        <button onclick="next(6,this)" class="select">Trusts & Estates</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="next(6)" class="select">Workers Compensation</button>
+                        <button onclick="next(6,this)" class="select">Workers Compensation</button>
                       </div>
                     </div>
                   </div>
@@ -307,160 +318,160 @@
                 <div id="slide6" class="col-md-12 contain p-5">
                   <p class="lab"><span class="sn">6 <i class="fas fa-arrow-right"></i></span> What other practice areas do you mostly cover? (Multy Select)</p>
                   <div class="container-fluid">
-                    <div class="row">
+                    <div style="height: 40vh;overflow: scroll;overflow-x: hidden;" class="row">
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Appellate</button>
+                        <button onClick="select(this)" class="select">Appellate</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Alcohol Beverage Law</button>
+                        <button onClick="select(this)" class="select">Alcohol Beverage Law</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Antitrust and Competition</button>
+                        <button onClick="select(this)" class="select">Antitrust and Competition</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Aviation</button>
+                        <button onClick="select(this)" class="select">Aviation</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Banking</button>
+                        <button onClick="select(this)" class="select">Banking</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Bankruptcy</button>
+                        <button onClick="select(this)" class="select">Bankruptcy</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Biotech</button>
+                        <button onClick="select(this)" class="select">Biotech</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Civil</button>
+                        <button onClick="select(this)" class="select">Civil</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Condominium</button>
+                        <button onClick="select(this)" class="select">Condominium</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Construction </button>
+                        <button onClick="select(this)" class="select">Construction </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Commercial Litigation </button>
+                        <button onClick="select(this)" class="select">Commercial Litigation </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Corporate </button>
+                        <button onClick="select(this)" class="select">Corporate </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Criminal </button>
+                        <button onClick="select(this)" class="select">Criminal </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Data Privacy </button>
+                        <button onClick="select(this)" class="select">Data Privacy </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Education </button>
+                        <button onClick="select(this)" class="select">Education </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Electric Power </button>
+                        <button onClick="select(this)" class="select">Electric Power </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Energy and Oil & Gas </button>
+                        <button onClick="select(this)" class="select">Energy and Oil & Gas </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Entertainment </button>
+                        <button onClick="select(this)" class="select">Entertainment </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Environment & Land </button>
+                        <button onClick="select(this)" class="select">Environment & Land </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Estate Planning </button>
+                        <button onClick="select(this)" class="select">Estate Planning </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Family Law </button>
+                        <button onClick="select(this)" class="select">Family Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Finance </button>
+                        <button onClick="select(this)" class="select">Finance </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Food & Drug </button>
+                        <button onClick="select(this)" class="select">Food & Drug </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">General Liability </button>
+                        <button onClick="select(this)" class="select">General Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Government </button>
+                        <button onClick="select(this)" class="select">Government </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Health Care </button>
+                        <button onClick="select(this)" class="select">Health Care </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Immigration </button>
+                        <button onClick="select(this)" class="select">Immigration </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Insurance Coverage </button>
+                        <button onClick="select(this)" class="select">Insurance Coverage </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Insurance Defense </button>
+                        <button onClick="select(this)" class="select">Insurance Defense </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Intellectual Property </button>
+                        <button onClick="select(this)" class="select">Intellectual Property </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">International Trade </button>
+                        <button onClick="select(this)" class="select">International Trade </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Labor & Employment </button>
+                        <button onClick="select(this)" class="select">Labor & Employment </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Maritime & Trans </button>
+                        <button onClick="select(this)" class="select">Maritime & Trans </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Medical Malpractice </button>
+                        <button onClick="select(this)" class="select">Medical Malpractice </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Mergers & Acquisitions </button>
+                        <button onClick="select(this)" class="select">Mergers & Acquisitions </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Municipal Law </button>
+                        <button onClick="select(this)" class="select">Municipal Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Other </button>
+                        <button onClick="select(this)" class="select">Other </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Patent Law </button>
+                        <button onClick="select(this)" class="select">Patent Law </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Personal Injury </button>
+                        <button onClick="select(this)" class="select">Personal Injury </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Personal Injury Protection </button>
+                        <button onClick="select(this)" class="select">Personal Injury Protection </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Probate & Trust </button>
+                        <button onClick="select(this)" class="select">Probate & Trust </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Product Liability </button>
+                        <button onClick="select(this)" class="select">Product Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Professional Liability </button>
+                        <button onClick="select(this)" class="select">Professional Liability </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Real Estate </button>
+                        <button onClick="select(this)" class="select">Real Estate </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Tax </button>
+                        <button onClick="select(this)" class="select">Tax </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Technology Transactions </button>
+                        <button onClick="select(this)" class="select">Technology Transactions </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Telecommunications </button>
+                        <button onClick="select(this)" class="select">Telecommunications </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Trial </button>
+                        <button onClick="select(this)" class="select">Trial </button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Trusts & Estates</button>
+                        <button onClick="select(this)" class="select">Trusts & Estates</button>
                       </div>
                       <div class="col-md-3 py-1">
-                        <button onclick="select(this)" class="select">Workers Compensation</button>
+                        <button onClick="select(this)" class="select">Workers Compensation</button>
                       </div>
                     </div>
-                    <div class="py-3">
-                      <button onclick="next(7)" class="customBtn">Next</button>
+                    <div class="left py-3">
+                      <button onclick="next(7,this)" class="customBtn">Next</button>
                     </div>
                   </div>
                 </div>
@@ -470,7 +481,7 @@
 
 
                 <div id="slide7" class="col-md-12 contain p-5">
-                  <label class="lab" for="email"
+                  <label class="lab" for="zip_Code"
                     > <span class="sn"
                     >7 <i class="fas fa-arrow-right"></i
                   ></span> What zip code do you live in (so we know which locations are too far)?
@@ -480,9 +491,12 @@
                     type="text"
                     name=""
                     placeholder="Type your zip code here"
-                    id="email"
+                    id="zip_Code"
                   />
-                  <button onclick="next(8)" class="customBtn">Next</button>
+                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <div class="left">
+                  <button onclick="next(8,this)" class="customBtn">Next</button>
+                </div>
                 </div>
 
                 <!-- Step 8 -->
@@ -506,10 +520,10 @@
                         <div class="col-md-4 py-3">
                           <button onclick="select(this)" class="select">All </button>
                         </div>
-                        <div class="py-3">
-                          <button onclick="next(9)" class="customBtn">Next</button>
-                        </div>
                       </div>
+                          <div class="left py-3">
+                            <button onclick="next(9,this)" class="customBtn">Next</button>
+                          </div>
                     </div>
                   
                 </div>
@@ -526,12 +540,15 @@
                   ></span> What’s your email?</label>
                   <input
                     class="inp"
-                    type="text"
+                    type="email"
                     name=""
                     placeholder="Type your email here"
                     id="email"
                   />
-                  <button onclick="next(10)" class="customBtn">Next</button>
+                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <div class="left">
+                  <button onclick="next(10,this)" class="customBtn">Next</button>
+                </div>
                 </div>
 
                 <!-- Step 10 -->
@@ -545,10 +562,12 @@
                     class="inp"
                     type="text"
                     name=""
-                    placeholder="Contact Number"
+                    placeholder="+(447)911123456"
                     id=""
                   />
-                  <button onclick="next(11)" class="customBtn">Last Question</button>
+                  <div class="left">
+                  <button onclick="next(11,this)" class="customBtn">Last Question</button>
+                </div>
                 </div>
 
                 <!-- Step 11 -->
@@ -566,8 +585,10 @@
                     placeholder="Contact Number"
                     id="input_CV"
                   />
+                  <div class="left">
                   <button onclick="showCVinput()" class="customBtn">Yes</button>
-                  <button onclick="next(12)" class="customBtn">No</button>
+                  <button onclick="next(12,this)" class="customBtn">No</button>
+                </div>
                 </div>
 
                 <!-- Step 12 -->
@@ -581,18 +602,16 @@
               </div>
             </div>
           </div>
-          <div class="col-md-2 right full">
-            <h3>Job Application Form Template</h3>
-            <p>works great on every device</p>
-          </div>
+          
         </div>
       </div>
-      <div class="fixed-bottom p-3 text-right row">
+      <div class="fixed-bottom p-3 text-right">
+        <div class="row">
         <div class="col-md-10">
           <div class="status">
             <div class="percent">
               <p><span id="percentageNumber">0</span>% completed</p>
-              <p  style="margin: 0;" class="empty">
+              <p  class="empty">
                 <p id="showPercent" class="statusFull"></p>
               </p>
             </div>
@@ -602,9 +621,9 @@
             <button onclick="previousSlide()" class="bottomBtn">
               <i class="fas fa-angle-up"></i>
             </button>
-          </div>
         </div>
       </div>
+    </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

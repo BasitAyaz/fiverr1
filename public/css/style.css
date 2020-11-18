@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
   font-family: ABeeZee;
+  transition: .5s;
+  box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth!important;
 }
 .inp {
   width: 100%;
@@ -44,13 +46,6 @@ html {
   height: 100%;
   min-height: 100vh;
 }
-.right {
-  background-color: rgb(245 241 234);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .contain {
   height: "100%";
   min-height: 100vh;
@@ -58,6 +53,12 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  animation: slide .5s ease in;
+}
+.left{
+  flex: none;
+  text-align: left;
+  width: 100%;
 }
 .customBtn {
   padding: 10px 20px;
@@ -86,10 +87,16 @@ html {
 .status{
     vertical-align: bottom;
 }
-.full {
-  height: 100%;
-  min-height: 100vh;
-  /* overflow: scroll; */
+
+@media only screen and (max-width: 600px) {
+  .percent{
+    width: 70%;
+  }
+  .sn{
+    display: block;
+    /* text-align: center; */
+    margin-left: 0;
+  }
 }
 .empty {
   background-color: rgba(0, 0, 0, 0.5);
@@ -102,11 +109,16 @@ html {
   border-radius: 5px;
 }
 .percent {
-  width: 170px;
+  width: 200px;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0;
   text-align: left;
+  vertical-align: top;
+  padding: 10px;
+}
+.percent p{
+  margin-bottom: 0;
 }
 .select{
     width: 100%;
@@ -153,8 +165,54 @@ html {
 #input_CV{
     display: none;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;} 
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(26, 145, 162, .3); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  rgb(26, 145, 162); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 145, 162,9); 
+}
+
+.slideanim {
+  visibility:hidden;
+  visibility:visible\9;/*For old IE browsers IE6-8 */
+}
+.slideanim.slide {                  
+  visibility: visible;                  
+  animation: slide 1s;
+}
+.slideanim::after {
+  /* useful when its child elements are float:left; */
+  content: "";
+  display: table;
+  clear: both;
+}
+@keyframes slide {
+  0% {
+      transform: translateY(50%);
+  } 
+  100% {
+      transform: translateY(0);
+  } 
+}
+.error{
+  color: red;
+  background-color: white;
+  box-shadow: 0 5px 7px lightgrey;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  display: none;
 }
