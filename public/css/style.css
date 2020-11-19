@@ -215,4 +215,5 @@ html {
   width: fit-content;
   border-radius: 5px;
   display: none;
+  text-align: left;
 }

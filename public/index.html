@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,7 +90,7 @@
                     placeholder="Type your first name here"
                     id="last_Name"
                   />
-                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <p id="error2" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
                   <div  class="left">
                   <button onclick="next(4,this)" class="customBtn">Next</button>
                 </div>
@@ -318,7 +318,7 @@
                 <div id="slide6" class="col-md-12 contain p-5">
                   <p class="lab"><span class="sn">6 <i class="fas fa-arrow-right"></i></span> What other practice areas do you mostly cover? (Multy Select)</p>
                   <div class="container-fluid">
-                    <div style="height: 40vh;overflow: scroll;overflow-x: hidden;" class="row">
+                    <div id="selection1" style="height: 40vh;overflow: scroll;overflow-x: hidden;" class="row">
                       <div class="col-md-3 py-1">
                         <button onClick="select(this)" class="select">Appellate</button>
                       </div>
@@ -493,7 +493,7 @@
                     placeholder="Type your zip code here"
                     id="zip_Code"
                   />
-                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <p id="error3" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
                   <div class="left">
                   <button onclick="next(8,this)" class="customBtn">Next</button>
                 </div>
@@ -507,7 +507,7 @@
                     >8 <i class="fas fa-arrow-right"></i></span> What size firms are you open to?</label>
                     <div class="container-fluid">
 
-                      <div class="row">
+                      <div id="selection2" class="row">
                         <div class="col-md-4 py-3">
                           <button onclick="select(this)" class="select">Small (boutique)</button>
                         </div>
@@ -545,7 +545,7 @@
                     placeholder="Type your email here"
                     id="email"
                   />
-                  <p id="error" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
+                  <p id="error4" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
                   <div class="left">
                   <button onclick="next(10,this)" class="customBtn">Next</button>
                 </div>
@@ -563,8 +563,9 @@
                     type="text"
                     name=""
                     placeholder="+(447)911123456"
-                    id=""
+                    id="contactNumber"
                   />
+                  <p id="error5" class="error"><i class="fas fa-exclamation-triangle"></i> Please Enter value in this Input filed</p>
                   <div class="left">
                   <button onclick="next(11,this)" class="customBtn">Last Question</button>
                 </div>
@@ -586,7 +587,7 @@
                     id="input_CV"
                   />
                   <div class="left">
-                  <button onclick="showCVinput()" class="customBtn">Yes</button>
+                  <button onclick="showCVinput(this)" class="customBtn">Yes</button>
                   <button onclick="next(12,this)" class="customBtn">No</button>
                 </div>
                 </div>
@@ -637,6 +638,7 @@
     ></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
